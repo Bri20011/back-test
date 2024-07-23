@@ -2,15 +2,15 @@ const express = require('express');
 
 const respuesta = require('../../red/respuestas');
 const constrolador = require('./index');
-const seguridad = require('../usuarios/seguridad')
+
 //const { agregar } = require('../../DB/mysql');
 
 const router = express.Router();
 
-router.get('/',seguridad(),todos);
-router.get('/:id',seguridad(),uno);
-router.post('/',seguridad(), agregar);
-router.put('/', seguridad(), eliminar);
+router.get('/',todos);
+router.get('/:id',uno);
+router.post('/',agregar);
+router.put('/', eliminar);
 
  async function todos(req, res, next){
     try{
